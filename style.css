@@ -1,0 +1,120 @@
+* {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    height: 100vh;
+}
+
+header {
+    color: white !important;
+    width: 7em;
+    margin: 0 auto;
+    border-right: 1px solid rgba(255, 255, 255, .75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    animation: typewriter 4s steps(44) 1s 1 normal both,blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 7em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.earth-orbit {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    border-left: 2px solid white;
+    gap: 14px;
+    padding: 10px;
+    border-radius: 50%;
+    animation-name: orbit;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.moon-orbit {
+    justify-self: flex-start;
+    border-left: 1px solid white;
+    border-radius: 50%;
+    width: 100px;
+    padding: 5px;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+    animation-name: orbit;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.earth {
+    background-color: skyblue;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    border-radius: 50%;
+}
+
+.moon {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.sun {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border-radius: 50%;
+    align-self: center;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+.earth-orbit:hover .sun {
+    background-color: orange !important;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
